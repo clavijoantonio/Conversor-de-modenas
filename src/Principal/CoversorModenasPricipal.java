@@ -11,10 +11,14 @@ public class CoversorModenasPricipal {
 		// TODO Auto-generated method stub
 
 
-		VistasView vistas= new VistasView();
+		
+		
+		ConexionApiController conex= new ConexionApiController();
+		
+		
+       VistasView vistas= new VistasView();
 		
 		vistas.presentarMenu();
-		
 		
 	}
 

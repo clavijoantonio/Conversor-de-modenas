@@ -3,6 +3,7 @@ package View;
 import java.util.Scanner;
 
 import Controller.CalculosConversorModena;
+import Controller.ConexionApiController;
 
 
 
@@ -10,13 +11,9 @@ public class VistasView {
 
 	int opcion;
 	
+	int valorConversion;
 	
-	
-	Scanner ingresaDatos = new Scanner(System.in);
-	
-	
-    
-	
+	Scanner ingresaOpcion = new Scanner(System.in);
 
 	String menu ="""
 			    1) Dolar >>> Peso Argentino
@@ -27,25 +24,21 @@ public class VistasView {
 			    6) Peso Colombiano >>> Dolar
 			    7) salir 
 			""";
-	
-	
-	 
-	
+
      
 	public void presentarMenu() {
 	do {
 		System.out.println("****************************");
 		System.out.println("Sea bienvenido/a al Conversor de Modena =");
 		System.out.println(menu);
-		System.out.print("Elija una opcion valida: "); opcion= ingresaDatos.nextInt();
+		System.out.print("Elija una opcion valida: "); opcion= ingresaOpcion.nextInt();
+		System.out.print("Ingresa el valor a Convertir: "); valorConversion= ingresaOpcion.nextInt();
 		System.out.println("****************************");
 		
-		CalculosConversorModena opciones= new CalculosConversorModena(opcion);
+		CalculosConversorModena opciones= new CalculosConversorModena(opcion,valorConversion);
 		
 	}while(opcion!=7);
   }
-	
-	
 	
 	
 	

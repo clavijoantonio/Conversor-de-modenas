@@ -1,17 +1,21 @@
 package Controller;
 
+import Model.PesoColombianoModel;
+
 public class CalculosConversorModena {
 
 	int opciones;
-
-
-	public CalculosConversorModena(int opcion) {
-	
-		opciones = opcion;
+    int valorConversion;
+    int mostarResultado;
+    PesoColombianoModel pesoCol= new PesoColombianoModel();
+    
+	public CalculosConversorModena(int opciones, int valorConversion) {
 		
+		this.opciones = opciones;
+		this.valorConversion = valorConversion;
 	}
 
-
+	
 	public void ejecutaOpcion() {
 		switch (opciones) {
 		case 1:
@@ -30,6 +34,9 @@ public class CalculosConversorModena {
 			
 			break;
 		case 6:
+			
+			mostarResultado=pesoCol.coviertePesoADolar(valorConversion);
+			System.out.println(mostarResultado);
 			
 			break;
 			
