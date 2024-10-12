@@ -13,7 +13,7 @@ public class VistasView {
 	
 	int valorConversion;
 	
-	Scanner ingresaOpcion = new Scanner(System.in);
+	Scanner ingresaDatos = new Scanner(System.in);
 
 	String menu ="""
 			    1) Dolar >>> Peso Argentino
@@ -31,13 +31,19 @@ public class VistasView {
 		System.out.println("****************************");
 		System.out.println("Sea bienvenido/a al Conversor de Modena =");
 		System.out.println(menu);
-		System.out.print("Elija una opcion valida: "); opcion= ingresaOpcion.nextInt();
-		System.out.print("Ingresa el valor a Convertir: "); valorConversion= ingresaOpcion.nextInt();
-		System.out.println("****************************");
-		
-		CalculosConversorModena opciones= new CalculosConversorModena(opcion,valorConversion);
-		
+		System.out.print("Elija una opcion valida: "); opcion= ingresaDatos.nextInt();
+		if (opcion!=7) {
+			
+			System.out.print("Ingresa el valor a Convertir: "); valorConversion= ingresaDatos.nextInt();
+			System.out.println("****************************");
+			CalculosConversorModena opciones= new CalculosConversorModena(opcion,valorConversion);
+			opciones.ejecutaOpcion();
+		}
 	}while(opcion!=7);
+	
+	
+	
+	
   }
 	
 	

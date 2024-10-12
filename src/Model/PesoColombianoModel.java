@@ -6,17 +6,26 @@ public class PesoColombianoModel extends ModenasModel {
    
    String codigoBase="USD";
    
-   int valorAcovertir;
-   
+ 
    ModenasModel modenaString= conversorMoneda(codigo, codigoBase);
    
    String valorMoneda= modenaString.getConversion();
    
    
-   public int coviertePesoADolar(int valor) {
-	   int resultado;
-	   resultado= valor/Integer.parseInt(valorMoneda);
-	   System.out.println(valorMoneda);
+   public double coviertePesoColADolar(int valor) {
+	   double resultado;
+	   
+	   resultado= valor/Double.parseDouble(valorMoneda);
+	   
+	   return resultado;
+	   
+   }
+   
+   public double covierteDolarAPesoCol(int valor) {
+	   double resultado;
+	   
+	   resultado= valor*Double.parseDouble(valorMoneda);
+	   
 	   return resultado;
 	   
    }

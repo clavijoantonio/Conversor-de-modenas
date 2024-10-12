@@ -49,7 +49,7 @@ public class ModenasModel {
     	
 		try {
 			result = conex.conectaApi(targetCode, baseCode);
-			System.out.println(result.getConversion());
+			
 		} catch (IOException | InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
